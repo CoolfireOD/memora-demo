@@ -1,4 +1,4 @@
-import { get, post, remove } from "../../utils/requests";
+import { post } from "../../utils/requests";
 import { API_DOMAIN } from "../../const";
 import { Card } from "../../types";
 

@@ -1,10 +1,9 @@
 import React, { FC } from "react";
 import { DataCard } from "./DataCard";
 import { Box } from "@mui/material";
-import { useQueryClient, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import * as API from "../api";
 import { CARDS_QUERY_KEY } from "../const";
-import { getCardQueryKey } from "../../../utils/getCardQueryKey";
 import { Card } from "../../../types";
 
 interface DataCardsContainerProps {
@@ -14,8 +13,6 @@ interface DataCardsContainerProps {
 export const DataCardsContainer: FC<DataCardsContainerProps> = ({
   filterText,
 }) => {
-  const queryClient = useQueryClient();
-
   const { data: cardItems } = useQuery(CARDS_QUERY_KEY, API.getCards);
 
   const filteredCards: Card[] = [];

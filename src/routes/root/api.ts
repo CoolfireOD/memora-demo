@@ -1,4 +1,4 @@
-import { get, post, remove } from "../../utils/requests";
+import { get, remove } from "../../utils/requests";
 import { API_DOMAIN } from "../../const";
 import { Card } from "../../types";
 
@@ -12,6 +12,6 @@ export const getCards = async () => {
   return data;
 };
 
-export const deleteCard= async (itemId: string) => {
+export const deleteCard = async (itemId: string) => {
   await remove(`${url}/${itemId}`);
 };

@@ -2,16 +2,22 @@ import React, { FC } from "react";
 import { TextField, Button, Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { usePostCardMutation } from "./hooks/usePostCardMutation";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type Inputs = {
+  title: string;
+  subtitle: string;
+  description: string;
+};
 
 export const AddDataCardRoute: FC = () => {
   const navigate = useNavigate();
 
-  const { register, handleSubmit, watch } = useForm();
+  const { register, handleSubmit, watch } = useForm<Inputs>();
 
   const { mutate: postCard } = usePostCardMutation();
 
-  const onSubmit = (data: any) => {
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
     if (data.description.trim() === "") return;
 
     postCard({
@@ -21,6 +27,7 @@ export const AddDataCardRoute: FC = () => {
     });
 
     navigate("/");
+    console.log("norm");
   };
 
   const handleCancel = () => {
