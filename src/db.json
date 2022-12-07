@@ -1,0 +1,50 @@
+{
+  "cards": [
+    {
+      "id": "1",
+      "title": "Photo",
+      "subtitle": ".jpeg",
+      "description": "my photos"
+    },
+    {
+      "id": "2",
+      "title": "Text",
+      "subtitle": ".txt",
+      "description": "my english exam"
+    },
+    {
+      "id": "3",
+      "title": "Music",
+      "subtitle": ".mp3",
+      "description": "my favourite music collection"
+    },
+    {
+      "id": "4",
+      "title": "Code",
+      "subtitle": ".cpp",
+      "description": "a simple c++ code"
+    },
+    {
+      "id": "5",
+      "title": "Photo",
+      "subtitle": ".png",
+      "description": "just a photo"
+    },
+    {
+      "id": "6",
+      "title": "Movie",
+      "subtitle": ".mp4",
+      "description": "just a movie"
+    }
+  ],
+  "tags": [
+    {
+      "name": "photo",
+      "cards": [
+        1,
+        3,
+        6
+      ]
+    }
+  ]
+}
