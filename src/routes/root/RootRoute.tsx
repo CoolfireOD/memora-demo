@@ -1,8 +1,8 @@
 import React, { FC, useState } from "react";
 import { FindDataCardInput } from "./components/FindDataCardInput";
-import { AddDataCardButton } from "./components/AddDataCardButton";
 import { DataCardsContainer } from "./components/DataCardsContainer";
 import { Box } from "@mui/material";
+import { RootBurgerMenu } from "./components/RootBurgerMenu";
 
 export const RootRoute: FC = () => {
   const [filterText, setFilterText] = useState("");
@@ -23,7 +23,7 @@ export const RootRoute: FC = () => {
         filterText={filterText}
         onFilterTextChange={handleFilterTextChange}
       />
-      <AddDataCardButton />
+      <RootBurgerMenu />
       <DataCardsContainer filterText={filterText} />
     </Box>
   );

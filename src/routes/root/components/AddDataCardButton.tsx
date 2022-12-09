@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { IconButton } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { useNavigate } from "react-router-dom";
 
@@ -8,18 +7,11 @@ export const AddDataCardButton: FC = () => {
 
   return (
     <>
-      <IconButton
+      <AddIcon
         onClick={() => {
           navigate("/create");
         }}
-        sx={{
-          position: "fixed",
-          bottom: 15,
-          right: 15,
-        }}
-      >
-        <AddIcon></AddIcon>
-      </IconButton>
+      />
     </>
   );
 };
