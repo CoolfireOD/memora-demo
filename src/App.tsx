@@ -7,7 +7,7 @@ import { router } from "./router";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 import { useColorMode } from "./components/ColorModeProvider";
-
+import { NotificationsProvider } from "./components/NotificationsProvider";
 const queryClient = new QueryClient();
 
 function App() {
@@ -23,9 +23,11 @@ function App() {
         })}
       >
         <CssBaseline />
-        <AppContainer>
-          <RouterProvider router={router} />
-        </AppContainer>
+        <NotificationsProvider>
+          <AppContainer>
+            <RouterProvider router={router} />
+          </AppContainer>
+        </NotificationsProvider>
       </ThemeProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
