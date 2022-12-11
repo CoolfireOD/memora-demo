@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useDeleteCardMutation } from "../hooks/useDeleteCardMutation";
+import { useNavigate } from "react-router-dom";
 
 interface DataCardProps {
   id: string;
@@ -26,6 +27,8 @@ export const DataCard: FC<DataCardProps> = ({
   subtitle,
   description,
 }) => {
+  const navigate = useNavigate();
+
   const { mutate: deleteCard } = useDeleteCardMutation();
 
   const [open, setOpen] = useState(false);
@@ -41,6 +44,9 @@ export const DataCard: FC<DataCardProps> = ({
     <>
       <Card
         sx={{ width: 275, border: "1px solid black", position: "relative" }}
+        onDoubleClickCapture={() => {
+          navigate(`/${id}`);
+        }}
       >
         <CardContent>
           <Button
@@ -48,12 +54,9 @@ export const DataCard: FC<DataCardProps> = ({
               px: 0,
               py: 0,
             }}
-            onClick={() => {
-              console.log("some tags");
-            }}
           >
             <Typography
-              sx={{ fontSize: 14 }}
+              sx={{ fontSize: 14, mb: 0 }}
               color="text.secondary"
               gutterBottom
             >
@@ -70,7 +73,7 @@ export const DataCard: FC<DataCardProps> = ({
           >
             <CloseIcon />
           </IconButton>
-          <Typography variant="h5" component="div">
+          <Typography sx={{ mt: 0.5 }} variant="h5" component="div">
             {title}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
