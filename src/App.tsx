@@ -11,27 +11,25 @@ import { NotificationsProvider } from "./components/NotificationsProvider";
 const queryClient = new QueryClient();
 
 function App() {
-  const { mode } = useColorMode();
+    const { mode } = useColorMode();
 
-  return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider
-        theme={createTheme({
-          palette: {
-            mode,
-          },
-        })}
-      >
-        <CssBaseline />
-        <NotificationsProvider>
-          <AppContainer>
-            <RouterProvider router={router} />
-          </AppContainer>
-        </NotificationsProvider>
-      </ThemeProvider>
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
-  );
+    return (
+        <QueryClientProvider client={queryClient}>
+            <ThemeProvider
+                theme={createTheme({
+                    palette: {
+                        mode,
+                    },
+                })}
+            >
+                <CssBaseline />
+                <NotificationsProvider>
+                    <RouterProvider router={router} />
+                </NotificationsProvider>
+            </ThemeProvider>
+            <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+    );
 }
 
 export default App;
