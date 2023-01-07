@@ -1,0 +1,1 @@
+export { RecordsRoute } from "./RecordsRoute";
