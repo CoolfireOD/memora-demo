@@ -1,21 +1,21 @@
 import React, { FC, ReactNode } from "react";
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
 
 type AppContainerProps = {
-    children?: ReactNode;
+  children?: ReactNode;
 };
 
 export const AppContainer: FC<AppContainerProps> = ({ children }) => {
-    return (
-        <Container
-            maxWidth="xl"
-            sx={{
-                display: "flex",
-                flexDirection: "column",
-                rowGap: 2,
-            }}
-        >
-            {children}
-        </Container>
-    );
+  return (
+    <Box
+      sx={{
+        width: "100%",
+        maxWidth: "2560px",
+        p: 0,
+        m: "auto",
+      }}
+    >
+      {children}
+    </Box>
+  );
 };
