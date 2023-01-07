@@ -20,11 +20,18 @@ function App() {
                     palette: {
                         mode,
                     },
+                    typography: {
+                        fontFamily: ['"Space Grotesk"', '"sans-serif"'].join(
+                            ","
+                        ),
+                    },
                 })}
             >
                 <CssBaseline />
                 <NotificationsProvider>
-                    <RouterProvider router={router} />
+                    <AppContainer>
+                        <RouterProvider router={router} />
+                    </AppContainer>
                 </NotificationsProvider>
             </ThemeProvider>
             <ReactQueryDevtools initialIsOpen={false} />
