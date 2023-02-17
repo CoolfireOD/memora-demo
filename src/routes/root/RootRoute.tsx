@@ -11,6 +11,7 @@ export const RootRoute: FC = () => {
         display: "flex",
         minHeight: "100vh",
         columnGap: 4,
+        width: "100%",
       }}
     >
       <MainNav />
@@ -23,6 +24,7 @@ export const RootRoute: FC = () => {
           "@media screen and (max-width: 600px)": {
             p: 2,
           },
+          position: "relative",
         }}
       >
         {" "}

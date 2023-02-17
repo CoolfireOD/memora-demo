@@ -7,12 +7,11 @@ import { PasswordCondition } from "../../types";
 import { PasswordCheckPopover } from "./components/PasswordCheckPopover";
 import { passwordMeterColors } from "./const";
 import { FieldErrors } from "../../types";
-import { UseFormRegister, FieldValues } from "react-hook-form";
 
 type PasswordInputProps = {
   label?: string;
   variant?: "standard" | "filled" | "outlined" | undefined;
-  register: UseFormRegister<FieldValues>;
+  register: any;
   errors?: FieldErrors | null;
   strengthCheck?: { enable: boolean; strength: number };
   conditions?: PasswordCondition[];
@@ -72,7 +71,6 @@ export const PasswordInput: FC<PasswordInputProps> = ({
             fullWidth
             {...bindFocus(popupState)}
           />
-          {console.log(typeof bindPopover(popupState), bindPopover(popupState))}
           {strengthCheck.enable && (
             <PasswordCheckPopover
               bindPopover={bindPopover(popupState)}
