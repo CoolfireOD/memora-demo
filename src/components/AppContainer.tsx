@@ -10,9 +10,13 @@ export const AppContainer: FC<AppContainerProps> = ({ children }) => {
     <Box
       sx={{
         width: "100%",
-        maxWidth: "2560px",
+        maxWidth: "1440px",
         p: 0,
         m: "auto",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        minHeight: "100vh",
       }}
     >
       {children}

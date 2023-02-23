@@ -7,6 +7,7 @@ import { CardRoute } from "./routes/cardRoute";
 import { RecordsRoute } from "./routes/recordsRoute";
 import { ProfileRoute } from "./routes/profileRoute";
 import { SettingsRoute } from "./routes/settingsRoute";
+import { AuthPage, LoginPage, SignUpPage } from "./routes/authRoute";
 
 export const router = createBrowserRouter([
   {
@@ -40,5 +41,20 @@ export const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
     ],
+  },
+  {
+    path: "/auth",
+    element: <AuthPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/auth/login",
+    element: <LoginPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/auth/signup",
+    element: <SignUpPage />,
+    errorElement: <ErrorPage />,
   },
 ]);
