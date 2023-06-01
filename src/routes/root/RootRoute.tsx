@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Box } from "@mui/material";
-import { MainNav } from "./components/MainNav";
+import { MainNav } from "./components/MainNav/MainNav";
 import { Outlet } from "react-router-dom";
 import { AddDataCardButton } from "./components/AddDataCardButton";
 
@@ -10,8 +10,11 @@ export const RootRoute: FC = () => {
       sx={{
         display: "flex",
         minHeight: "100vh",
-        columnGap: 4,
         width: "100%",
+
+        "@media screen and (max-width: 600px)": {
+          flexDirection: "column",
+        },
       }}
     >
       <MainNav />
