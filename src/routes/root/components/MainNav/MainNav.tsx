@@ -16,7 +16,7 @@ export const MainNav: FC = () => {
         width: "100%",
         maxWidth: "75px",
         height: "inherit",
-        zIndex: 10000,
+        zIndex: 1000,
         position: "relative",
 
         "@media screen and (max-width: 600px)": {

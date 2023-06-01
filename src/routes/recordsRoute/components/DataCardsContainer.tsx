@@ -34,7 +34,7 @@ export const DataCardsContainer: FC<DataCardsContainerProps> = ({
         flexWrap: "wrap",
         columnGap: 2,
         rowGap: 2,
-        justifyContent: "space-around",
+        justifyContent: "center",
       }}
     >
       {filteredCards?.map((card, index) => (
